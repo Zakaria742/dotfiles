@@ -1,0 +1,94 @@
+{
+   "layer": "bot",
+   "spacing": 0,
+   "height": 0,
+   "margin-bottom": 0,
+   "padding-top": 0,
+   "margin-top": 0,
+   "position": "top",
+   "margin-right": 0,
+   "margin-left": 0,
+
+   "modules-left": ["sway/workspaces", "clock"],
+   "modules-center": ["custom/Zen", "custom/lapp","custom/shut","custom/bg"],
+   "modules-right": ["pulseaudio","network","battery"],
+
+    "sway/workspaces":{
+	"disable-scroll": true,
+	"all-outputs": true,
+	"presistent-workspaces":{
+	    "*": [1, 2, 3]
+	},
+	"tooltips": false
+     },
+
+     "bluetooth":{
+	"format": "{icon}: {status}",
+	"on-click": "kitty bluetoothctl",
+	"format-icons": {
+	    "enabled": "›ᛒ",
+	    "disabled": "›ᛒ"
+	},
+	"tooltip": false
+     },
+     "network":{
+	"interface": "wlp4s0",
+	"interval" : 1,
+	"format": "[o)] : {essid} [{bandwidthUpBits}]",
+	"format-disconnected": "[X] Disconnected...",
+	"tooltip": false
+},	
+ 
+     "battery":{
+	"states": {
+	   "warning": 30,
+	   "critical": 30
+	},
+	"interval": 60,
+	"format-full": "[FULL] : [{capacity}%]",
+	"format": "{icon} : [{capacity}%]",
+	"format-warning": "{icon} : [{capacity}%] [{time}]",
+	"format-critical": "{icon} : [{capacity}%] [{time}]",
+	"format-alt": "[T_Left] : [{time}]",
+	"format-icons": {
+	    "default": "□ □ □",
+	    "warning": "□ □",
+	    "critical": "□"
+	},
+	"tooltip": false
+      },
+      
+      "clock":{
+	"format": "{:%H:%M}",
+	"tooltip": false
+	},
+
+      "pulseaudio":{
+	"format": "{icon}[Volume] : [{volume}]",
+	"scroll-step": 5,
+	"tooltip": false
+	},
+
+       "custom/Zen":{
+	    "format": "ZEN",
+	    "on-click": "~/voice.sh zen && zen",
+	    "tooltip": false
+	},
+	"custom/bg":{
+	    "format": "BCG",
+	    "on-click": "cycbg",
+	    "on-click-right": "pgrep eww >/dev/null 2>&1 && eww close bg_folder || eww open bg_folder",
+	    "tooltip": false
+	},
+	"custom/shut":{
+	    "format" : "-(o)-",
+	    "on-click" : "shut",
+	    "tooltip" : false
+	},
+	"custom/lapp":{
+	    "format" : "play",
+	    "on-click" : "kitty --hold lgame",
+	    "tooltip" : false
+	}
+}
+

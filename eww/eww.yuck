@@ -1,0 +1,48 @@
+(defwindow bg_folder
+	:monitor 0
+	:class "win"
+	:geometry (geometry :x "54.2%"
+			    :y "0px"
+			    :width "10%"
+			    :height "10%"
+			    )
+	:stacking "fg"
+	:windowtype "dock"
+	:wmignore false
+	(box :orientation "horizontal" :class "folder-box"
+	     :halign "center" :valign "center"
+	     :vexpand false :hexpand false
+	     (eventbox :onclick "cycle_bg -p ~/Downloads/Test_Paper/;notify-send 'SUCCESS' 'PATH TO ALL HAS BEEN SET' ; eww close bg_folder" :class "ran"
+		     (box :clickable true
+	     	     (image :path "/home/aira/Downloads/cubes-solid-full.svg"
+		    	    :image-width 100
+		    	    :image-height 100
+		    	    )))
+	     (eventbox :onclick "cycle_bg -p ~/Downloads/Test_Paper/FAVORITES;notify-send 'SUCCESS' 'PATH TO FAVORITES HAS BEEN SET'; eww close bg_folder" :class "fav"
+                     (box :clickable true
+                     (image :path "/home/aira/Downloads/heart-solid-full.svg"
+                            :image-width 100
+                            :image-height 100
+                            )))
+))
+
+(defwidget fav [?nothing]
+	(box :orientation "horizontal" :spacing 5
+	     :vexpand true :hexpand true 
+	     :valign "center" :halign "center"
+	     :space-evenly false
+
+	     (button :onclick "shut" "FAVORITE")
+	)
+)
+
+(defwidget rand [?nothing]
+        (box :class "folder-box"
+             :orientation "horizontal" :spacing 5
+             :vexpand true :hexpand true 
+             :valign "center" :halign "center"
+             :space-evenly false
+
+             (button :onclick "cycle_bg" "RANDOM")
+        )
+)

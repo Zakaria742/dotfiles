@@ -1,0 +1,112 @@
+*{
+    font-family: CozetteVector;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar{
+
+    background-color: rgba(0, 0, 0, 0)/*rgba(102, 88, 98, 1)*/;
+}
+
+
+#clock,
+#battery,
+#pulseaudio,
+#network{
+    padding: 0px 10px;
+}
+#battery{
+	color: white;
+	background-color: #5151ff;
+	opacity: 1;
+	background-image:  linear-gradient(135deg, #000000 25%, transparent 25%), linear-gradient(225deg, #000000 25%, transparent 25%), linear-gradient(45deg, #000000 25%, transparent 25%), linear-gradient(315deg, #000000 25%, #5151ff 25%);
+	background-position:  0;
+	background-size: 7px 7px;
+	background-repeat: repeat;
+	animation: slide 10s linear infinite ;
+}
+
+@keyframes slide{
+	to{
+		background-position: 100px 130px;
+	}
+}
+
+#battery.warning{
+	color: white;
+	font-weight: bold;
+        background-color: #5151ff;
+        opacity: 1;
+        background-image:  linear-gradient(135deg, #000000 25%, transparent 25%), linear-gradient(225deg, #000000 25%, transparent 25%), linear-gradient(45deg, #000000 25%, transparent 25%), linear-gradient(315deg, #000000 25%, #fcb737 25%);
+        background-position:  0;
+        background-size: 7px 7px;
+        background-repeat: repeat;
+        animation: slide 10s linear infinite ;
+}
+#battery.critical{
+	font-weight: bold;
+	color: white;
+        background-color: #5151ff;
+        opacity: 1;        background-image:  linear-gradient(135deg, #000000 25%, transparent 25%), linear-gradient(225deg, #000000 25%, transparent 25%), linear-gradient(45deg, #000000 25%, transparent 25%), linear-gradient(315deg, #000000 25%, #fc2352 25%);
+        background-position:  0;
+        background-size: 5px 5px;
+        background-repeat: repeat;
+        animation: slide 10s linear infinite ;
+}
+#battery.discharging.critical, #battery.discharging.warning{
+    animation: slide 0.5s linear infinite;
+}
+#custom-Zen{
+    padding: 10px 15px;
+}
+#custom-bg{
+    padding: 10px 15px;
+}
+
+#custom-shut{
+    background-color: #fc2352;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+/*🞮⯀*/
+
+.modules-right{
+	background-color: black;
+	padding: 0;
+	border: solid 2px #ffffff;
+}
+
+#custom-lapp{
+    background-color: #5F91F0 /*4b72bd*/ ;
+    padding: 10px 18px;
+
+}
+.modules-center{
+	background-color: black;
+	font-weight: bold;
+	padding: 0;
+	border: solid 2px white;
+}
+.modules-left{
+	background-color: black;
+	padding: 0;
+	margin: 0;
+	border: solid 2px white;
+}
+#workspaces{
+    margin: 0px 10px;
+}
+
+#workspaces button{
+    border: none;
+    color: #000000;
+    padding: 0px 10px;
+}
+#workspaces button:hover{
+    border: none;
+    background-color: #fc2352;
+    transition-duration: 120ms;
+}

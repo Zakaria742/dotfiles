@@ -1,0 +1,17 @@
+.folder-box{
+	background-color: white;
+}
+.fav{
+	transition: all ease-out 200ms;
+}
+.fav:hover{
+	transition: all ease-in 200ms;
+	background-color: #ff7895;
+}
+.ran{
+	transition: ease-out 200ms;
+}
+.ran:hover{
+	transition: ease-in 200ms;
+	background-color: #4be392;
+}
